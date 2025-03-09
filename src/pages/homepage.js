@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate для навигации
 
-const App = () => {
-  const [user, setUser] = useState(null); // Состояние для данных пользователя
+const HomePage = () => {
+  const navigate = useNavigate(); // Хук для навигации
 
-  // Используем useEffect для инициализации при загрузке
   useEffect(() => {
     // Проверяем, запущено ли приложение внутри Telegram
     if (window.Telegram && window.Telegram.WebApp) {
-      const tg = window.Telegram.WebApp; // Получаем объект Telegram Web App
+      const tg = window.Telegram.WebApp;
 
       tg.ready(); // Сообщаем Telegram, что приложение готово
       tg.expand(); // Разворачиваем приложение на весь экран
-
-      // Получаем данные пользователя
-      const userData = tg.initDataUnsafe.user;
-      setUser(userData); // Сохраняем данные пользователя
 
       // Настраиваем основную кнопку
       tg.MainButton.setText('Зайти'); // Текст на кнопке
@@ -23,35 +18,17 @@ const App = () => {
 
       // Обработчик нажатия на кнопку
       tg.MainButton.onClick(() => {
-        tg.sendData(JSON.stringify({ action: 'start' })); // Отправляем данные в бота
-        tg.close(); // Закрываем приложение
+        navigate('/booking'); // Переходим на страницу BookingPage
       });
     }
-  }, []); // Пустой массив зависимостей означает, что эффект выполнится один раз
+  }, [navigate]); // Добавляем navigate в зависимости useEffect
 
   return (
-    <div className="app">
-      {/* Шапка страницы */}
-      <header className="header">
-        <h1>URBAN-TEAM</h1>
-        {/* Приветствуем пользователя, если данные доступны */}
-        {user && <p>Привет, {user.first_name}!</p>}
-      </header>
-
-      {/* Основной контент */}
-      <main className="main">
-        <div className="card">
-          <h2>Добро пожаловать!</h2>
-          <p>Нажмите "Зайти", чтобы начать.</p>
-        </div>
-      </main>
-
-      {/* Подвал страницы */}
-      <footer className="footer">
-        <p>© URBAN-TEAM. Все права защищены.</p>
-      </footer>
+    <div className="home-page">
+      <h1>URBAN-TEAM</h1>
+      <p>Добро пожаловать! Нажмите "Зайти", чтобы начать.</p>
     </div>
   );
 };
 
-export default App;
+export default HomePage;
