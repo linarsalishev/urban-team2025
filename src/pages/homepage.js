@@ -5,7 +5,7 @@ const HomePage = () => {
   const navigate = useNavigate(); // Хук для навигации
 
   const handleClick = () => {
-    navigate('/booking'); // Переходим на страницу BookingPage
+    navigate('/main'); // Переходим на страницу MainPage
   };
 
   return (
