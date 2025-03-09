@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from 'react'; // Импортируем React и хуки
 import '../App.css'; // Импортируем стили
 
+const styles = {
+    button: {
+      backgroundColor: '#007bff',
+      color: 'white',
+      border: 'none',
+      padding: '10px 20px',
+      borderRadius: '5px',
+      fontSize: '16px',
+      cursor: 'pointer',
+    },
+  };
+
 const App = () => {
   const [user, setUser] = useState(null); // Состояние для данных пользователя
 
