@@ -1,42 +1,40 @@
-import React, { useEffect, useState } from 'react'; // Импортируем React и необходимые хуки
-import '../App.css'; // Импортируем стили из файла App.css
+import React, { useEffect, useState } from 'react'; // Импортируем React и хуки
+import '../App.css'; // Импортируем стили
 
 const App = () => {
-  // Создаем состояние `user` для хранения данных пользователя
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null); // Состояние для данных пользователя
 
-  // Используем `useEffect` для выполнения кода при загрузке страницы
+  // Используем useEffect для инициализации при загрузке
   useEffect(() => {
     // Проверяем, запущено ли приложение внутри Telegram
     if (window.Telegram && window.Telegram.WebApp) {
       const tg = window.Telegram.WebApp; // Получаем объект Telegram Web App
 
-      tg.ready(); // Сообщаем Telegram, что приложение готово к использованию
+      tg.ready(); // Сообщаем Telegram, что приложение готово
       tg.expand(); // Разворачиваем приложение на весь экран
 
-      // Получаем данные пользователя из Telegram
+      // Получаем данные пользователя
       const userData = tg.initDataUnsafe.user;
-      setUser(userData); // Сохраняем данные пользователя в состояние `user`
+      setUser(userData); // Сохраняем данные пользователя
 
-      // Настраиваем основную кнопку (например, "Зайти")
-      tg.MainButton.setText('Зайти'); // Устанавливаем текст на кнопке
-      tg.MainButton.show(); // Показываем кнопку внизу экрана
+      // Настраиваем основную кнопку
+      tg.MainButton.setText('Зайти'); // Текст на кнопке
+      tg.MainButton.show(); // Показываем кнопку
 
-      // Обработчик нажатия на основную кнопку
+      // Обработчик нажатия на кнопку
       tg.MainButton.onClick(() => {
-        // Отправляем данные в бота (например, действие "start")
-        tg.sendData(JSON.stringify({ action: 'start' }));
-        tg.close(); // Закрываем приложение после нажатия
+        tg.sendData(JSON.stringify({ action: 'start' })); // Отправляем данные в бота
+        tg.close(); // Закрываем приложение
       });
     }
-  }, []); // Пустой массив зависимостей означает, что эффект выполнится только один раз при загрузке
+  }, []); // Пустой массив зависимостей означает, что эффект выполнится один раз
 
   return (
     <div className="app">
       {/* Шапка страницы */}
       <header className="header">
         <h1>URBAN-TEAM</h1>
-        {/* Если данные пользователя есть, показываем приветствие */}
+        {/* Приветствуем пользователя, если данные доступны */}
         {user && <p>Привет, {user.first_name}!</p>}
       </header>
 
@@ -56,4 +54,4 @@ const App = () => {
   );
 };
 
-export default App; // Экспортируем компонент, чтобы его можно было использовать в других файлах
+export default App; // Экспортируем компонент
