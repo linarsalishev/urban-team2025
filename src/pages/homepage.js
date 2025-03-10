@@ -11,10 +11,10 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <h1>URBAN-TEAM</h1>
-      <p>Добро пожаловать! Нажмите "Зайти", чтобы начать.</p>
+      <p>Добро пожаловать!</p>
       {/* Кнопка "Зайти" */}
       <button onClick={handleClick} className="enter-button">
-        Зайти
+        Войти
       </button>
     </div>
   );

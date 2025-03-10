@@ -1,4 +1,5 @@
 import React from 'react';
+import HomeButton from '../components/HomeButton'; // Импортируем HomeButton
 
 const SubscriptionPage = () => {
   // Данные об абонементах
@@ -12,7 +13,6 @@ const SubscriptionPage = () => {
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>Список абонементов</h1>
-
       {/* Список абонементов */}
       <div style={styles.subscriptionList}>
         {subscriptions.map((subscription, index) => (
@@ -28,6 +28,7 @@ const SubscriptionPage = () => {
           </div>
         ))}
       </div>
+      <HomeButton /> {/* Кнопка "Вернуться домой" */}
     </div>
   );
 };

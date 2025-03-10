@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import HomeButton from '../components/HomeButton'; // Импортируем HomeButton    
 
 const SchedulePage = () => {
   // Состояние для выбранного филиала
@@ -107,6 +108,7 @@ const SchedulePage = () => {
           </div>
         ))}
       </div>
+      <HomeButton /> {/* Кнопка "Вернуться домой" */}
     </div>
   );
 };

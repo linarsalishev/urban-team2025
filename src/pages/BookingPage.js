@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import HomeButton from '../components/HomeButton'; // Импортируем HomeButton
 
 const BookingPage = () => {
   const [name, setName] = useState('');
@@ -64,6 +65,7 @@ const BookingPage = () => {
           Записаться
         </button>
       </form>
+      <HomeButton /> {/* Кнопка "Вернуться домой" */}
     </div>
   );
 };

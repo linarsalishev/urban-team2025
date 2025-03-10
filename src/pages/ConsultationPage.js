@@ -1,4 +1,5 @@
 import React from 'react';
+import HomeButton from '../components/HomeButton'; // Импортируем HomeButton
 
 const ContactsPage = () => {
   // Данные о контактах
@@ -38,6 +39,7 @@ const ContactsPage = () => {
             <p style={styles.contactPlatform}>{contact.platform}</p>
           </a>
         ))}
+        <HomeButton /> {/* Кнопка "Вернуться домой" */}
       </div>
     </div>
   );
