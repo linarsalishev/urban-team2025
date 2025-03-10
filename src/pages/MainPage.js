@@ -14,7 +14,7 @@ const MainPage = () => {
         </button>
 
         {/* Кнопка "Покупка абонемента" */}
-        <button onClick={() => navigate('/subscription')} className="main-button">
+        <button onClick={() => navigate('/gallery')} className="main-button">
           Покупка абонемента
         </button>
 
