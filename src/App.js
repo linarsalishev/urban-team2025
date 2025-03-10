@@ -6,6 +6,7 @@ import MainPage from './pages/MainPage'; // Импортируем MainPage
 import SchedulePage from './pages/SchedulePage';
 import BookingPage from './pages/BookingPage';
 import GalleryPage from './pages/GalleryPage';
+import ConsultationPage from './pages/ConsultationPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/schedule" element={<SchedulePage />} />
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/consultation" element={<ConsultationPage />} />
       </Routes>
     </Router>
   );

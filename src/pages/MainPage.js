@@ -23,7 +23,7 @@ const MainPage = () => {
           Расписание филиалов
         </button>
 
-        {/* Кнопка "Консультация" */}
+        {/* Кнопка "Контакты" */}
         <button onClick={() => navigate('/consultation')} className="main-button">
           Консультация
         </button>
