@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const ModerPage = () => {
@@ -23,7 +23,7 @@ const ModerPage = () => {
           <button onClick={() => navigate('/createabonement')} className="main-button">
             Абонементы
           </button>
-          
+
           <button onClick={() => navigate('/moderpage')} className="main-button">
             Расписание
           </button>
