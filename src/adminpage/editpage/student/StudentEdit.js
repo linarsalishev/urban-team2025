@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const StudentEdit = () => {
-  const navigate = useNavigate();
 
   // Получаем список учеников из localStorage
   const [students, setStudents] = useState(JSON.parse(localStorage.getItem('students')) || []);
