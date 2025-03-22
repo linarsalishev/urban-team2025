@@ -10,12 +10,16 @@ const MainPage = () => {
       <div className="button-container">
         {/* Кнопка "Запись на занятие" */}
         <button onClick={() => navigate('/booking')} className="main-button">
-          Запись на занятие
+          Редактирование
+        </button>
+
+        <button onClick={() => navigate('/guestpage')} className="main-button">
+          Воронка продаж
         </button>
 
         {/* Кнопка "Покупка абонемента" */}
         <button onClick={() => navigate('/gallery')} className="main-button">
-          Покупка абонемента
+          Обратная связь
         </button>
 
         {/* Кнопка "Расписание филиалов" */}
