@@ -22,6 +22,13 @@ import CreateStudentPage from './adminpage/moderationpage/CreateStudentPage';
 import CreateTeacherPage from './adminpage/moderationpage/CreateTeacherPage';
 import DirectPage from './adminpage/moderationpage/DirectPage';
 import CreateAbonement from './adminpage/moderationpage/CreateAbonement'
+import AnonsPage from './anonspage/AnonsPage'
+import CreateAnons from './adminpage/moderationpage/CreateAnons'
+import AnonsEdit from './adminpage/editpage/anonsedit/AnonsEdit'
+import GuestRecord from './adminpage/GuestRecord'
+import RecordAnons from './guestpage/record/RecordAnons'
+import GuestBuy from './adminpage/GuestBuy/GuestBuy';
+import ArendaHall from './adminpage/ArendaHall';
 
 function App() {
   return (
@@ -48,6 +55,13 @@ function App() {
         <Route path='/createteacher' element={<CreateTeacherPage/>} />
         <Route path='/directpage' element={<DirectPage/>} />
         <Route path='/createabonement' element={<CreateAbonement/>} />
+        <Route path='/anons' element={<AnonsPage/>} />
+        <Route path='/createanons' element={<CreateAnons/>} />
+        <Route path='/anonsedit' element={<AnonsEdit/>} />
+        <Route path='/guestrecord' element={<GuestRecord/>} />
+        <Route path='/recordanons' element={<RecordAnons/>} />
+        <Route path='/guestbuy' element={<GuestBuy/>} />
+        <Route path='/arendahall' element={<ArendaHall/>} />
       </Routes>
     </Router>
   );

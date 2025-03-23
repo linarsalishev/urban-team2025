@@ -15,7 +15,7 @@ const AdministraionPage = () => {
             Редактирование
           </button>
   
-          <button onClick={() => navigate('/guestpage')} className="main-button">
+          <button onClick={() => navigate('/guestbuy')} className="main-button">
             Воронка продаж
           </button>
   

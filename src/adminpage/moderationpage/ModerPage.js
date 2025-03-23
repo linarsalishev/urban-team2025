@@ -31,6 +31,10 @@ const ModerPage = () => {
           <button onClick={() => navigate('/directpage')} className="main-button">
             Филиалы, направления
           </button>
+
+          <button onClick={() => navigate('/createanons')} className="main-button">
+            Мероприятия
+          </button>
           
         <button onClick={() => navigate('/main')} className="main-button">
             Главная страница

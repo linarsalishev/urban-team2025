@@ -13,12 +13,12 @@ const GuestPage = () => {
             Записаться на занятие
           </button>
   
-          <button onClick={() => navigate('/studentedit')} className="main-button">
+          <button onClick={() => navigate('/arendahall')} className="main-button">
             Арендовать зал
           </button>
   
           {/* Кнопка "Обратная связь" */}
-          <button onClick={() => navigate('/teacher')} className="main-button">
+          <button onClick={() => navigate('/anons')} className="main-button">
             Мероприятия
           </button>
 
